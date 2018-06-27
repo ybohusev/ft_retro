@@ -46,12 +46,7 @@ void    Field::bulletsDraw(BulletList &bl)
 void    Field::drawHero(Ship & we){
     init_pair(1, COLOR_GREEN, COLOR_BLACK);
     attron(COLOR_PAIR(1));
-    if (we.getHP() == 3)
-        we.setStr("B======D");
-    else if (we.getHP() == 2)
-        we.setStr("B====D");
-    else
-        we.setStr("B==D");
+    we.setStr(">");
     mvprintw(we.getY(), we.getX(), we.getStr().c_str());
     attroff(COLOR_PAIR(1));
 }
